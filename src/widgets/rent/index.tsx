@@ -60,7 +60,15 @@ export function SectionRent() {
 							</PhotosCarouselItem>
 							<PhotosCarouselItem>
 								<Image
-									src='/assets/rooms/room-2-2.jpg'
+									src='/assets/rooms/room-2-3.jpg'
+									alt=''
+									fill
+									className='object-cover'
+								/>
+							</PhotosCarouselItem>
+							<PhotosCarouselItem>
+								<Image
+									src='/assets/rooms/room-2-4.jpg'
 									alt=''
 									fill
 									className='object-cover'
@@ -250,6 +258,22 @@ export function SectionRent() {
 											className='object-cover'
 										/>
 									</PhotosCarouselItem>
+									<PhotosCarouselItem>
+										<Image
+											src='/assets/rooms/room-2-3.jpg'
+											alt=''
+											fill
+											className='object-cover'
+										/>
+									</PhotosCarouselItem>
+									<PhotosCarouselItem>
+										<Image
+											src='/assets/rooms/room-2-4.jpg'
+											alt=''
+											fill
+											className='object-cover'
+										/>
+									</PhotosCarouselItem>
 								</PhotosCarouselContent>
 							</PhotosCarousel>
 							<div className='text-xs-adaptive flex items-center bg-background text-center text-sm uppercase'>
@@ -257,7 +281,7 @@ export function SectionRent() {
 									зал #2 <span className='text-[0.7em]'>(каб. 320)</span>
 								</div>
 								<div className='self-stretch border-l px-2 py-1 lg:px-4 lg:py-2'>
-									500 Р
+									550 Р
 								</div>
 							</div>
 							<UiButton
