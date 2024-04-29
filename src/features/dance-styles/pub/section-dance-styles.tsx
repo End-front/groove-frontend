@@ -11,7 +11,6 @@ import {
 	UiDialogTrigger
 } from '@/shared/ui/ui-dialog'
 import { UiSection } from '@/shared/ui/ui-section'
-import { VideoTag } from '@/shared/ui/ui-video-tag'
 
 import { DANCE_STYLES } from '../constant'
 
@@ -29,6 +28,8 @@ export function SectionDanceStyles() {
 										src={dance.preview}
 										alt=''
 										fill
+										quality={100}
+										sizes='(min-width: 768px) 400px, 260px'
 										className='-z-[1] object-cover'
 									/>
 									<div className='text-sm-adaptive text-sm font-bold uppercase shadow-background/30 shade-text-border'>
@@ -40,14 +41,19 @@ export function SectionDanceStyles() {
 										{dance.previewName}
 									</UiDialogHeader>
 									<div className='mb-3 mt-2'>
-										<VideoTag
+										<video
 											loop
-											autoPlay
 											muted
+											autoPlay
 											playsInline
-											sources={[{ src: dance.video, type: 'video/mp4' }]}
 											className='h-auto w-full'
-										/>
+											poster={dance.preview}
+										>
+											<source
+												src={dance.video}
+												type='video/mp4'
+											/>
+										</video>
 									</div>
 									<div className='mb-4 px-5'>
 										<div className='text-2xs-adaptive mx-auto max-w-[23em] whitespace-pre-wrap text-2xs font-light'>

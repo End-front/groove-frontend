@@ -21,6 +21,18 @@ import {
 	PhotosCarouselItem
 } from './ui/photos-carousel'
 
+const ROOM_1_IMAGES = [
+	'/assets/rooms/room-1-1.jpg',
+	'/assets/rooms/room-1-2.jpg'
+]
+
+const ROOM_2_IMAGES = [
+	'/assets/rooms/room-2-1.jpg',
+	'/assets/rooms/room-2-2.jpg',
+	'/assets/rooms/room-2-3.jpg',
+	'/assets/rooms/room-2-4.jpg'
+]
+
 export function SectionRent() {
 	const [isOpenRules, setIsOpenRules] = useState(false)
 	const [isOpenPrice, setIsOpenPrice] = useState(false)
@@ -34,46 +46,32 @@ export function SectionRent() {
 						plugins={[Autoplay({ playOnInit: true, delay: 3000 })]}
 					>
 						<PhotosCarouselContent className='h-full w-full'>
-							<PhotosCarouselItem>
-								<Image
-									src='/assets/rooms/room-1-1.jpg'
-									alt=''
-									fill
-									className='object-cover'
-								/>
-							</PhotosCarouselItem>
-							<PhotosCarouselItem>
-								<Image
-									src='/assets/rooms/room-1-2.jpg'
-									alt=''
-									fill
-									className='object-cover'
-								/>
-							</PhotosCarouselItem>
-							<PhotosCarouselItem>
-								<Image
-									src='/assets/rooms/room-2-1.jpg'
-									alt=''
-									fill
-									className='object-cover'
-								/>
-							</PhotosCarouselItem>
-							<PhotosCarouselItem>
-								<Image
-									src='/assets/rooms/room-2-3.jpg'
-									alt=''
-									fill
-									className='object-cover'
-								/>
-							</PhotosCarouselItem>
-							<PhotosCarouselItem>
-								<Image
-									src='/assets/rooms/room-2-4.jpg'
-									alt=''
-									fill
-									className='object-cover'
-								/>
-							</PhotosCarouselItem>
+							{ROOM_1_IMAGES.map(image => {
+								return (
+									<PhotosCarouselItem key={image}>
+										<Image
+											src={image}
+											alt=''
+											fill
+											sizes='100vw'
+											className='object-cover'
+										/>
+									</PhotosCarouselItem>
+								)
+							})}
+							{ROOM_2_IMAGES.map(image => {
+								return (
+									<PhotosCarouselItem key={image}>
+										<Image
+											src={image}
+											alt=''
+											fill
+											sizes='100vw'
+											className='object-cover'
+										/>
+									</PhotosCarouselItem>
+								)
+							})}
 						</PhotosCarouselContent>
 					</PhotosCarousel>
 				</div>
@@ -200,22 +198,19 @@ export function SectionRent() {
 								plugins={[Autoplay({ playOnInit: true, delay: 3000 })]}
 							>
 								<PhotosCarouselContent className='h-full w-full'>
-									<PhotosCarouselItem>
-										<Image
-											src='/assets/rooms/room-1-1.jpg'
-											alt=''
-											fill
-											className='object-cover'
-										/>
-									</PhotosCarouselItem>
-									<PhotosCarouselItem>
-										<Image
-											src='/assets/rooms/room-1-2.jpg'
-											alt=''
-											fill
-											className='object-cover'
-										/>
-									</PhotosCarouselItem>
+									{ROOM_1_IMAGES.map(image => {
+										return (
+											<PhotosCarouselItem key={image}>
+												<Image
+													src={image}
+													alt=''
+													fill
+													sizes='(min-width: 576px) 420px, 270px'
+													className='object-cover'
+												/>
+											</PhotosCarouselItem>
+										)
+									})}
 								</PhotosCarouselContent>
 							</PhotosCarousel>
 							<div className='text-xs-adaptive flex items-center bg-background text-center text-sm uppercase'>
@@ -242,38 +237,19 @@ export function SectionRent() {
 								plugins={[Autoplay({ playOnInit: true, delay: 3000 })]}
 							>
 								<PhotosCarouselContent className='h-full w-full'>
-									<PhotosCarouselItem>
-										<Image
-											src='/assets/rooms/room-2-1.jpg'
-											alt=''
-											fill
-											className='object-cover'
-										/>
-									</PhotosCarouselItem>
-									<PhotosCarouselItem>
-										<Image
-											src='/assets/rooms/room-2-2.jpg'
-											alt=''
-											fill
-											className='object-cover'
-										/>
-									</PhotosCarouselItem>
-									<PhotosCarouselItem>
-										<Image
-											src='/assets/rooms/room-2-3.jpg'
-											alt=''
-											fill
-											className='object-cover'
-										/>
-									</PhotosCarouselItem>
-									<PhotosCarouselItem>
-										<Image
-											src='/assets/rooms/room-2-4.jpg'
-											alt=''
-											fill
-											className='object-cover'
-										/>
-									</PhotosCarouselItem>
+									{ROOM_2_IMAGES.map(image => {
+										return (
+											<PhotosCarouselItem key={image}>
+												<Image
+													src={image}
+													alt=''
+													fill
+													sizes='(min-width: 576px) 420px, 270px'
+													className='object-cover'
+												/>
+											</PhotosCarouselItem>
+										)
+									})}
 								</PhotosCarouselContent>
 							</PhotosCarousel>
 							<div className='text-xs-adaptive flex items-center bg-background text-center text-sm uppercase'>

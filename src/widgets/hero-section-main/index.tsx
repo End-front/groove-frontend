@@ -1,5 +1,6 @@
 import { cn } from '@/shared/lib/class-name'
-import { VideoTag } from '@/shared/ui/ui-video-tag'
+
+import { VideoBackground } from './ui/video-background'
 
 export function HeroSectionMain({ className }: { className?: string }) {
 	return (
@@ -9,28 +10,7 @@ export function HeroSectionMain({ className }: { className?: string }) {
 				className
 			)}
 		>
-			<VideoTag
-				muted
-				autoPlay
-				loop
-				playsInline
-				poster='/assets/videos/main-video.jpg'
-				className='pointer-events-none absolute inset-0 -z-[1] h-full w-full object-cover'
-				preload='auto'
-				sources={[
-					{
-						// poster: '/assets/videos/main-video.jpg',
-						src: `${process.env.NEXT_PUBLIC_FRONTEND_URL}/assets/videos/main-video.mp4`,
-						type: 'video/mp4',
-						media: '(min-width: 992px)'
-					},
-					{
-						// poster: '/assets/videos/main-video-mob.jpg',
-						src: `${process.env.NEXT_PUBLIC_FRONTEND_URL}/assets/videos/main-video-mob.mp4`,
-						type: 'video/mp4'
-					}
-				]}
-			/>
+			<VideoBackground />
 			<div className='my-auto hidden lg:block'></div>
 			<div className='container my-auto flex justify-center'>
 				<div>

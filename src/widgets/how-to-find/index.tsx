@@ -1,7 +1,6 @@
 import Image from 'next/image'
 
 import { UiSection } from '@/shared/ui/ui-section'
-import { VideoTag } from '@/shared/ui/ui-video-tag'
 
 export function SectionHowToFind() {
 	return (
@@ -14,17 +13,17 @@ export function SectionHowToFind() {
 			</div>
 			<div className='container grid lg:grid-cols-[56%_44%] lg:gap-10 xl:gap-12 2xl:gap-14'>
 				<div>
-					<VideoTag
+					<video
+						muted
 						controls
 						playsInline
-						className=' rounded-xl shadow-lg shadow-accent-sup/30'
-						sources={[
-							{
-								src: `${process.env.NEXT_PUBLIC_FRONTEND_URL}/assets/videos/how-to-find.mp4`,
-								type: 'video/mp4'
-							}
-						]}
-					/>
+						className='w-full rounded-xl shadow-lg shadow-accent-sup/30'
+					>
+						<source
+							src='/assets/videos/how-to-find.mp4'
+							type='video/mp4'
+						/>
+					</video>
 				</div>
 				<div>
 					<UiSection.Title className='mb-3 mt-6 sm:mt-7 md:mt-8 lg:mt-0 lg:text-md-sm xl:text-md-md 2xl:text-md-lg'>
@@ -36,6 +35,7 @@ export function SectionHowToFind() {
 								src='/assets/images/how-to-find-1.png'
 								alt=''
 								fill
+								sizes='(min-width: 768px): 550px, 260px'
 								className='object-cover'
 							/>
 						</div>
@@ -44,6 +44,7 @@ export function SectionHowToFind() {
 								src='/assets/images/how-to-find-2.png'
 								alt=''
 								fill
+								sizes='(min-width: 768px): 550px, 260px'
 								className='object-cover'
 							/>
 						</div>

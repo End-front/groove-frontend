@@ -10,7 +10,6 @@ import {
 	UiDialogTrigger
 } from '@/shared/ui/ui-dialog'
 import { UiSection } from '@/shared/ui/ui-section'
-import { VideoTag } from '@/shared/ui/ui-video-tag'
 
 import { NEWS } from '../constant'
 import {
@@ -45,6 +44,8 @@ export function SectionNews() {
 											src={item.image}
 											alt=''
 											fill
+											quality={100}
+											sizes='(min-width: 576px) 400px, 280px'
 											className='object-cover'
 										/>
 									</div>
@@ -58,29 +59,30 @@ export function SectionNews() {
 								<div className='grid grid-cols-2 items-start gap-4 px-3 pb-5 pt-4 lg:gap-8 lg:px-6'>
 									<div className='relative aspect-[1/1.75] cursor-pointer overflow-hidden rounded-xl border border-border shadow-lg shadow-accent-sup/30'>
 										{item.video ? (
-											<VideoTag
+											<video
+												muted
 												playsInline
 												controls
-												muted
 												className='h-full w-full object-cover'
-												sources={[
-													{
-														src: item.video,
-														type: 'video/mp4'
-													}
-												]}
-											/>
+												poster={item.image}
+											>
+												<source
+													src={item.video}
+													type='video/mp4'
+												/>
+											</video>
 										) : (
 											<Image
 												src={item.image}
 												alt=''
 												fill
+												sizes='(min-width: 576px) 400px, 280px'
 												className='object-cover'
 											/>
 										)}
 									</div>
 									<div
-										className='text-2xs-adaptive [&>a]:text-link self-stretch rounded-xl border border-border px-2 py-4 text-[12px] !leading-snug'
+										className='text-2xs-adaptive self-stretch rounded-xl border border-border px-2 py-4 text-[12px] !leading-snug [&>a]:text-link'
 										dangerouslySetInnerHTML={{
 											__html: item.description.replaceAll('\n', '<br />')
 										}}
