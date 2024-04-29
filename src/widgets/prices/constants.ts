@@ -15,25 +15,24 @@ export const PRICES: {
 		price: 600
 	},
 	{
-		title: '4 тренировка',
+		title: '4 тренировки',
 		description: '( 1 направление )',
 		oldPrice: 2400,
 		price: 2000
 	},
 	{
-		title: '4 тренировка',
+		title: '4 тренировки',
 		description: '( все направление )',
-		oldPrice: 2400,
-		price: 2000
+		price: 2400
 	},
 	{
-		title: '8 тренировка',
+		title: '8 тренировок',
 		description: '( 1 направление )',
 		oldPrice: 4800,
-		price: 4000
+		price: 3600
 	},
 	{
-		title: '8 тренировка',
+		title: '8 тренировок',
 		description: '( все направление )',
 		oldPrice: 4800,
 		price: 4000
