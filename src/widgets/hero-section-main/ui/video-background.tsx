@@ -8,8 +8,12 @@ export function VideoBackground() {
 	// IOS power save mode - fix autoplay video
 	const [shouldUseImage, setShouldUseImage] = useState<boolean>(false)
 	useEffect(() => {
+		const isSafari = () => {
+			const ua = navigator.userAgent.toLowerCase()
+			return ua.indexOf('safari') > -1 && ua.indexOf('chrome') < 0
+		}
 		const video = videoRef.current
-		if (video) {
+		if (video && isSafari()) {
 			setTimeout(() => {
 				video.play().catch(err => {
 					setShouldUseImage(true)
@@ -23,7 +27,7 @@ export function VideoBackground() {
 			<img
 				src='/assets/videos/main-video-mob.mp4'
 				className='pointer-events-none absolute inset-0 -z-[1] h-full w-full object-cover'
-				alt='Muted video'
+				alt=''
 			/>
 		)
 	}
